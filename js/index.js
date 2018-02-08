@@ -16,7 +16,7 @@ export default class App extends React.Component {
     return (
       <div className="app">
         <div className="page">
-          <header><Logo /></header>
+          <header className="header"><Logo /></header>
           <div className="page-content">
             <div className="card">
               <Card data={CardData} />
