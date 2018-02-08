@@ -1,111 +1,173 @@
-@import url( 'https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+//@import url( 'https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+//@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css'); 
 
-$color-primary: rgb(160, 40, 80);
-$color-onyomi: rgba(60,120,220,1);
-$color-kunyomi: rgba(120,220,60,1);
-$color-black: rgba(30,30,30,1);
-$color-white: rgba(250,250,250,1);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+$color-primary: rgb(180, 20, 120);
+$color-secondary: rgb(220,120,80);
+$color-onyomi: rgb(60,40,160);
+$color-kunyomi: rgb(80,180,160);
+$color-black: rgb(30,30,30);
+$color-white: rgb(250,250,250);
 
 body,
 html {
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   margin: 0;
   padding: 0;
   zoom: 1;
+  height: 100%;
   color: $color-white;
-  background: linear-gradient(15deg, rgb(60,20,220),rgb(120,20,120));
+  text-align: center;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(15deg, $color-primary, $color-secondary);
 
 
-  h1 {
-    font-weight: normal;
-    font-size: 64px;
-    margin: .4em;
 
-    &.logo {
-      font-weight: 300;
+.header{
+  background: rgba($color-black, .8);
+
+  .brand {
+    display: flex;
+    flex-flow: row;
+    padding: 0.2em;
+
+    .logo {
+      margin: 0.2em 0.4em;
+      color: $color-white;
+      font-weight: 600;
+      font-size: 1.6em;
       text-shadow: 0 3px 1px rgba($color-black, 0.4);
+      .highlight {
+        color: lighten($color-primary, 20%);
+      }
+    }
+    .tagline {
+      margin: 0.2em 0.4em;
+      font-weight: 100;
+      font-size: 1em;
+      color: $color-secondary;
     }
   }
 
-  h2 {
-    font-weight: normal;
-    font-size: 32px;
-    margin: .2em;
-  }
-
-  h3 {
-    font-weight: normal;
-    font-size: 24px;
-    margin: .2em;
-  }
 }
 
+
+
 .page {
-  background: rgba($color-black,0.4);
   margin: 10%;
   text-align: center;
   border-radius: .4em;
 
-  .header{
-    background: rgba($color-black, .4);
-    padding: 0.2rem;
-  }
-
-  .page-content {
     .card {
-      background: rgba($color-white,1);
+      background: rgba($color-black, 0.4);
       color: $color-black;
       padding: 1em;
-      margin: 1em;
       border-radius: .4em;
 
-      .card_body {
-        text-align: center;
-      }
+      .card-head {
+        display: flex;
+        align-content: space-between;
+        margin: 0;
+        height: 100%;
+
+        .card-onyomi{
+          background: linear-gradient(-30deg, $color-onyomi, lighten($color-onyomi, 40%));
+          color: $color-white;
+          padding: 1em;
+          width: 50%;
+          height: 100%;
+          border-radius: 0.2em;
+          border-top: 6px solid $color-onyomi;
+
+          .card-reading-type {
+            color: $color-onyomi;
+            font-size: 0.8em;
+            line-height: 0em;
+          }
+          .card-reading-content {
+            font-size: 2em;
+            line-height: 0em;
+            text-shadow: 0 1px 0 $color-onyomi;
+          }
+        }
+  
+  
+        .card-kunyomi{
+          background: linear-gradient(30deg, $color-kunyomi, lighten($color-kunyomi, 40%));
+          color: $color-white;
+          padding: 1em;
+          width: 50%;
+          height: 100%;
+          border-radius: 0.2em;
+          border-top: 6px solid $color-kunyomi;
+
+
+          .card-reading-type {
+            color: $color-kunyomi;
+            font-size: 0.8em;
+            line-height: 0em;
+          }
+          .card-reading-content {
+            font-size: 2em;
+            line-height: 0em;
+            text-shadow: 0 1px 0 $color-kunyomi;
+          }
+        }
+      
+
+
+    }
+    .card-body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
 
       .card-kanji {
-        background: $color-primary;
+        background: $color-white;
+        border-radius: .4em;
+        text-align: center;
+        height: 100%;
 
         .card-kanji-content {
-          color: $color-white;
-          font-size: 8rem;
+          color: $color-black;
+          font-size: 12em;
+          line-height: 2em;
           font-weight: 300;
-          text-shadow: 0 3px 0px darken($color-primary, .6);
+        }
       }
-      }
-
-
-      .card-onyomi{
-        background: $color-onyomi;
-        color: $color-white;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-      }
-
-
-      .card-kunyomi{
-        background: $color-kunyomi;
-        color: $color-white;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-      }
+    }
+    .card-footer {
+      background: rgba($color-black, 0.8);
+      color: $color-white;
+      padding: 0.4em;
+      border-radius: .4em;
+      text-align: center;
 
     }
   }
 }
 
 .button {
-  background: $color-primary;
-  color: $color-white;
+  background: $color-white;
+  color: $color-primary;
+  font-weight: 300;
+  font-size: 1.6rem;
   padding: .4em .8em;
   margin: .4em 0;
   border-radius: .2em;
-  border-bottom: 2px solid rgba($color-primary, 0.4);
+  border-bottom: 2px solid $color-primary;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
+    color: $color-white;
     background: darken($color-primary, 10%);
   }
+}
 }
