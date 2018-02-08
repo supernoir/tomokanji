@@ -3,9 +3,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-$color-primary: rgb(180, 20, 120);
-$color-secondary: rgb(220,120,80);
-$color-onyomi: rgb(60,40,160);
+$color-primary: rgb(180, 80, 120);
+$color-secondary: rgb(100,80,200);
+$color-onyomi: rgb(220,120,80);
 $color-kunyomi: rgb(80,180,160);
 $color-black: rgb(30,30,30);
 $color-white: rgb(250,250,250);
@@ -28,7 +28,6 @@ html {
   background: linear-gradient(15deg, $color-primary, $color-secondary);
 
 
-
 .header{
   background: rgba($color-black, .8);
 
@@ -40,18 +39,13 @@ html {
     .logo {
       margin: 0.2em 0.4em;
       color: $color-white;
-      font-weight: 600;
+      font-weight: light;
       font-size: 1.6em;
       text-shadow: 0 3px 1px rgba($color-black, 0.4);
       .highlight {
         color: lighten($color-primary, 20%);
+        font-weight: bold;
       }
-    }
-    .tagline {
-      margin: 0.2em 0.4em;
-      font-weight: 100;
-      font-size: 1em;
-      color: $color-secondary;
     }
   }
 
@@ -80,6 +74,7 @@ html {
           background: linear-gradient(-30deg, $color-onyomi, lighten($color-onyomi, 40%));
           color: $color-white;
           padding: 1em;
+          margin-left: 0.5em;
           width: 50%;
           height: 100%;
           border-radius: 0.2em;
@@ -92,8 +87,15 @@ html {
           }
           .card-reading-content {
             font-size: 2em;
-            line-height: 0em;
+            line-height: 1.2em;
             text-shadow: 0 1px 0 $color-onyomi;
+            background: rgba($color-onyomi, 0.4);
+            border-radius: 1em;
+          }
+          .card-reading-romaji{
+            font-size: 0.8em;
+            line-height: 0em;
+            text-transform: uppercase;
           }
         }
   
@@ -102,6 +104,7 @@ html {
           background: linear-gradient(30deg, $color-kunyomi, lighten($color-kunyomi, 40%));
           color: $color-white;
           padding: 1em;
+          margin-right: 0.5em;
           width: 50%;
           height: 100%;
           border-radius: 0.2em;
@@ -115,8 +118,15 @@ html {
           }
           .card-reading-content {
             font-size: 2em;
-            line-height: 0em;
+            line-height: 1.2em;
             text-shadow: 0 1px 0 $color-kunyomi;
+            background: rgba($color-kunyomi, 0.4);
+            border-radius: 1em;
+          }
+          .card-reading-romaji{
+            font-size: 0.8em;
+            line-height: 0em;
+            text-transform: uppercase;
           }
         }
       
@@ -124,20 +134,21 @@ html {
 
     }
     .card-body {
-      margin: 0;
+      margin: 1em 0;
       padding: 0;
-      height: 100%;
 
       .card-kanji {
         background: $color-white;
         border-radius: .4em;
         text-align: center;
-        height: 100%;
+        margin: 0;
+        padding: 2em;
 
         .card-kanji-content {
           color: $color-black;
+
           font-size: 12em;
-          line-height: 2em;
+          line-height: 0em;
           font-weight: 300;
         }
       }
@@ -149,21 +160,43 @@ html {
       border-radius: .4em;
       text-align: center;
 
+      .card-meaning {
+        font-size: 1.8em;
+        font-weight: 500;
+      }
+      .card-details {
+        font-size: 1.2em;
+        font-weight: 300em;
+        color: lighten($color-secondary, 20%);
+      }
     }
   }
+}
+
+.nav {
+  margin: 2em 0 4em;
 }
 
 .button {
   background: $color-white;
   color: $color-primary;
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   padding: .4em .8em;
-  margin: .4em 0;
+  margin: .8em 0.6em;
   border-radius: .2em;
-  border-bottom: 2px solid $color-primary;
   cursor: pointer;
   text-decoration: none;
+
+  &.random{
+    background: linear-gradient(135deg, $color-secondary, $color-primary);
+    color: $color-white;
+    border: 3px solid $color-white;
+
+    &:hover {
+      background: linear-gradient(-135deg, $color-secondary, $color-primary);
+    }
+  }
 
   &:hover {
     color: $color-white;
