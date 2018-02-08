@@ -1,0 +1,38 @@
+[
+  [
+    {
+      "id": 0,
+      "lang": "en",
+      "word": "Test",
+      "romanization": "[test]",
+      "meaning": "A simple test"
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "lang": "cn",
+      "word": "记得",
+      "romanization": "[Jìdé]",
+      "meaning": "Remember"
+    }
+  ],
+  [
+    {
+      "id": 2,
+      "lang": "cn",
+      "word": "鸡",
+      "romanization": "[Jī]",
+      "meaning": "Chicken"
+    }
+  ],
+  [
+    {
+      "id": 3,
+      "lang": "cn",
+      "word": "山",
+      "romanization": "[Shān]",
+      "meaning": "Mountain"
+    }
+  ]
+]
