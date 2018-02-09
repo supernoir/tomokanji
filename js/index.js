@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Card from './Card'
+import * as utils from './utils/random'
 
 import CardData from '../data/example.json'
 const data = [
   {
-    id: 1,
+    id: 0,
     kanji: '冬',
     onyomihiragana: 'とう',
     onyomiromaji: 'tō',
@@ -18,7 +19,7 @@ const data = [
     type: 'Kyōiku'
   },
   {
-    id: 2,
+    id: 1,
     kanji: '山',
     onyomihiragana: 'さん',
     onyomiromaji: 'san',
@@ -27,6 +28,30 @@ const data = [
     meaning: 'Mountain',
     detail: 'Grade 1 "Kyōiku" kanji',
     grade: 1,
+    type: 'Kyōiku'
+  },
+  {
+    id: 2,
+    kanji: '千',
+    onyomihiragana: 'せん',
+    onyomiromaji: 'sen',
+    kunyomihiragana: 'ち',
+    kunyomiromaji: 'chi',
+    meaning: 'Thousand',
+    detail: 'Grade 1 "Kyōiku" kanji',
+    grade: 1,
+    type: 'Kyōiku'
+  },
+  {
+    id: 3,
+    kanji: '家',
+    onyomihiragana: 'か/け',
+    onyomiromaji: 'ka, ke',
+    kunyomihiragana: 'いえ/や',
+    kunyomiromaji: 'ie, ya',
+    meaning: 'House, Home',
+    detail: 'Grade 2 "Kyōiku" kanji',
+    grade: 2,
     type: 'Kyōiku'
   }
 ]
@@ -45,27 +70,67 @@ const Logo = () => {
 }
 
 export default class App extends React.Component {
+  constructor() {
+    super()
+    this.handlePrevious = this.handlePrevious.bind(this)
+    this.handleRandom = this.handleRandom.bind(this)
+    this.handleNext = this.handleNext.bind(this)
+    this.state = {
+      kanjiset: data,
+      kanjicount: data.length - 1,
+      currentkanji: 0
+    }
+  }
+  handlePrevious() {
+    let current = this.state.currentkanji
+    if (current < 0) {
+      this.setState({ currentkanji: current - 1 })
+    } else {
+      this.setState({ currentkanji: 0 })
+    }
+  }
+  handleRandom() {
+    this.setState({ currentkanji: utils.getRandom(0, this.state.kanjicount) })
+  }
+  handleNext() {
+    let current = this.state.currentkanji
+    if (current < this.state.kanjicount) {
+      this.setState({ currentkanji: current + 1 })
+    } else {
+      this.setState({ currentkanji: this.state.kanjicount })
+    }
+  }
+
   render() {
     return (
       <div className="app">
         <header className="header"><Logo /></header>
         <div className="page">
           <Card
-            id={data[0].id}
-            kanji={data[0].kanji}
-            kunyomihiragana={data[0].kunyomihiragana}
-            kunyomiromaji={data[0].kunyomiromaji}
-            onyomihiragana={data[0].onyomihiragana}
-            onyomiromaji={data[0].onyomiromaji}
-            meaning={data[0].meaning}
-            detail={data[0].detail}
-            grade={data[0].grade}
-            type={data[0].type}
+            id={data[this.state.currentkanji || 0].id}
+            kanji={data[this.state.currentkanji || 0].kanji}
+            kunyomihiragana={data[this.state.currentkanji || 0].kunyomihiragana}
+            kunyomiromaji={data[this.state.currentkanji || 0].kunyomiromaji}
+            onyomihiragana={data[this.state.currentkanji || 0].onyomihiragana}
+            onyomiromaji={data[this.state.currentkanji || 0].onyomiromaji}
+            meaning={data[this.state.currentkanji || 0].meaning}
+            detail={data[this.state.currentkanji || 0].detail}
+            grade={data[this.state.currentkanji || 0].grade}
+            type={data[this.state.currentkanji || 0].type}
           />
           <aside className="nav">
-            <a href="#" className="button">« Previous 前</a>
-            <a href="#" className="button random">Random 運</a>{' '}
-            <a href="#" className="button">Next 次 »</a>
+            <p>This is the current Kanji Number: {this.state.currentkanji}</p>
+            <p>You are accessing {this.state.kanjicount} Kanji</p>
+            <a onClick={this.handlePrevious} className="button">
+              « Previous 前
+            </a>
+            <a onClick={this.handleRandom} className="button random">
+              Random 運
+            </a>
+            {' '}
+            <a onClick={this.handleNext} className="button">
+              Next 次 »
+            </a>
           </aside>
         </div>
 
