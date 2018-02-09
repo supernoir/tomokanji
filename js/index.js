@@ -13,7 +13,9 @@ const data = [
     kunyomihiragana: 'ふゆ',
     kunyomiromaji: 'fuyu',
     meaning: 'Winter',
-    detail: 'Grade 2 "Kyōiku" kanji'
+    detail: 'Grade 2 "Kyōiku" kanji',
+    grade: 2,
+    type: 'Kyōiku'
   },
   {
     id: 2,
@@ -23,7 +25,9 @@ const data = [
     kunyomihiragana: 'やま',
     kunyomiromaji: 'yama',
     meaning: 'Mountain',
-    detail: 'Grade 1 "Kyōiku" kanji'
+    detail: 'Grade 1 "Kyōiku" kanji',
+    grade: 1,
+    type: 'Kyōiku'
   }
 ]
 
@@ -47,14 +51,16 @@ export default class App extends React.Component {
         <header className="header"><Logo /></header>
         <div className="page">
           <Card
-            id={data[1].id}
-            kanji={data[1].kanji}
-            kunyomihiragana={data[1].kunyomihiragana}
-            kunyomiromaji={data[1].kunyomiromaji}
-            onyomihiragana={data[1].onyomihiragana}
-            onyomiromaji={data[1].onyomiromaji}
-            meaning={data[1].meaning}
-            detail={data[1].detail}
+            id={data[0].id}
+            kanji={data[0].kanji}
+            kunyomihiragana={data[0].kunyomihiragana}
+            kunyomiromaji={data[0].kunyomiromaji}
+            onyomihiragana={data[0].onyomihiragana}
+            onyomiromaji={data[0].onyomiromaji}
+            meaning={data[0].meaning}
+            detail={data[0].detail}
+            grade={data[0].grade}
+            type={data[0].type}
           />
           <aside className="nav">
             <a href="#" className="button">« Previous 前</a>

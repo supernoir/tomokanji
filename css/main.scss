@@ -158,16 +158,41 @@ html {
       color: $color-white;
       padding: 0.4em;
       border-radius: .4em;
-      text-align: center;
+      display: flex;
+      flex-flow: column;
+      align-content: center;
 
       .card-meaning {
+        width: 100%;
         font-size: 1.8em;
         font-weight: 500;
       }
       .card-details {
+        width: 100%;
         font-size: 1.2em;
         font-weight: 300em;
         color: lighten($color-secondary, 20%);
+      }
+      .card-classification {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+
+        .card-classification-grade{
+          background: $color-secondary;
+          color: $color-white;
+          border-top-left-radius: 0.4em;
+          border-bottom-left-radius: 0.4em;
+          margin-right: 0.2em;
+          padding: 0.4em;
+        }
+        .card-classification-type{
+          background: $color-white;
+          color: $color-secondary;
+          border-top-right-radius: 0.4em;
+          border-bottom-right-radius: 0.4em;
+          padding: 0.4em;
+        }
       }
     }
   }
@@ -200,7 +225,7 @@ html {
 
   &:hover {
     color: $color-white;
-    background: darken($color-primary, 10%);
+    background: rgba($color-black, 0.4);
   }
 }
 }

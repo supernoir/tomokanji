@@ -45,6 +45,10 @@ export default class Card extends Component {
         <div className="card-footer">
           <div className="card-meaning">{this.props.meaning}</div>
           <div className="card-details">{this.props.detail}</div>
+          <div className="card-classification">
+            <p className="card-classification-grade">{this.props.grade}</p>
+            <p className="card-classification-type">{this.props.type}</p>
+          </div>
         </div>
       </div>
     )
