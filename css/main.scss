@@ -16,7 +16,6 @@ html {
   margin: 0;
   padding: 0;
   zoom: 1;
-  height: 100%;
   color: $color-white;
   text-align: center;
 }
@@ -25,10 +24,15 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  display: grid;
+  grid-template-rows: 1,2;
+  grid-template-columns: 1;
   background: linear-gradient(15deg, $color-primary, $color-secondary);
 
 
 .header{
+  grid-row: 1;
+  grid-column: 1;
   background: rgba($color-black, .8);
 
   .brand {
@@ -48,12 +52,11 @@ html {
       }
     }
   }
-
 }
 
-
-
 .page {
+  grid-row: 2;
+  grid-column: 1;
   margin: 10%;
   text-align: center;
   border-radius: .4em;
@@ -63,6 +66,7 @@ html {
       color: $color-black;
       padding: 1em;
       border-radius: .4em;
+ 
 
       .card-head {
         display: flex;
@@ -160,7 +164,7 @@ html {
       border-radius: .4em;
       display: flex;
       flex-flow: column;
-      align-content: center;
+      align-items: center;
 
       .card-meaning {
         width: 100%;
@@ -174,7 +178,6 @@ html {
         color: lighten($color-secondary, 20%);
       }
       .card-classification {
-        width: 100%;
         display: flex;
         flex-flow: row;
 
@@ -200,20 +203,30 @@ html {
 
 .nav {
   margin: 2em 0 4em;
+  display: flex;
+
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 480px){
+    flex-direction: column;
+  }
 }
 
 .button {
   background: $color-white;
   color: $color-primary;
-  font-weight: 300;
+  min-width: 120px;
+  font-weight: 400;
   font-size: 1.2rem;
   padding: .4em .8em;
   margin: .8em 0.6em;
   border-radius: .2em;
   cursor: pointer;
   text-decoration: none;
+  transition: background 0.4s ease;
 
-  &.random{
+  &.random {
     background: linear-gradient(135deg, $color-secondary, $color-primary);
     color: $color-white;
     border: 3px solid $color-white;

@@ -118,9 +118,11 @@ export default class App extends React.Component {
             grade={data[this.state.currentkanji || 0].grade}
             type={data[this.state.currentkanji || 0].type}
           />
-          <aside className="nav">
+          <aside className="debugger">
             <p>This is the current Kanji Number: {this.state.currentkanji}</p>
             <p>You are accessing {this.state.kanjicount} Kanji</p>
+          </aside>
+          <aside className="nav">
             <a onClick={this.handlePrevious} className="button">
               « Previous 前
             </a>
@@ -133,7 +135,6 @@ export default class App extends React.Component {
             </a>
           </aside>
         </div>
-
       </div>
     )
   }
