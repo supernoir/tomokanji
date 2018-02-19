@@ -117,6 +117,8 @@ export default class App extends React.Component {
             detail={data[this.state.currentkanji || 0].detail}
             grade={data[this.state.currentkanji || 0].grade}
             type={data[this.state.currentkanji || 0].type}
+            current={this.state.currentkanji}
+            total={this.state.kanjicount}
           />
           <aside className="debugger">
             <p>This is the current Kanji Number: {this.state.currentkanji}</p>
@@ -124,14 +126,14 @@ export default class App extends React.Component {
           </aside>
           <aside className="nav">
             <a onClick={this.handlePrevious} className="button">
-              « Previous 前
+              ‹ 前 Previous
             </a>
             <a onClick={this.handleRandom} className="button random">
               Random 運
             </a>
             {' '}
             <a onClick={this.handleNext} className="button">
-              Next 次 »
+              Next 次 ›
             </a>
           </aside>
         </div>

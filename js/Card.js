@@ -49,6 +49,15 @@ export default class Card extends Component {
             <p className="card-classification-grade">{this.props.grade}</p>
             <p className="card-classification-type">{this.props.type}</p>
           </div>
+          <div className="card-kanjicount">
+            <span className="card-kanjicount-current">
+              {this.props.current + 1}
+            </span>
+            <span className="card-kanjicount-divider">/</span>
+            <span className="card-kanjicount-total">
+              {this.props.total + 1}
+            </span>
+          </div>
         </div>
       </div>
     )

@@ -160,7 +160,7 @@ html {
     .card-footer {
       background: rgba($color-black, 0.8);
       color: $color-white;
-      padding: 0.4em;
+      padding: 2em 0.4em;
       border-radius: .4em;
       display: flex;
       flex-flow: column;
@@ -195,6 +195,23 @@ html {
           border-top-right-radius: 0.4em;
           border-bottom-right-radius: 0.4em;
           padding: 0.4em;
+        }
+      }
+      .card-kanjicount{
+        border-radius: 4px;
+        border: 1px solid $color-white;
+        padding: 0.4em;
+        span {
+          &.card-kanjicount-total{
+            color: $color-secondary;
+          }
+          &.card-kanjicount-divider{
+            color: rgba($color-white, 0.2);
+          }
+          &.card-kanjicount-current{
+            color: $color-white;
+          }
+          padding: 0 0.1em;
         }
       }
     }
