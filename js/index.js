@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Card from './Card'
 import * as utils from './utils/random'
 
-import CardData from '../data/example.json'
+import kanjilist from '../data/kanjilist.json'
 const data = [
   {
     id: 0,
@@ -76,8 +76,8 @@ export default class App extends React.Component {
     this.handleRandom = this.handleRandom.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.state = {
-      kanjiset: data,
-      kanjicount: data.length - 1,
+      kanjiset: kanjilist,
+      kanjicount: kanjilist.length - 1,
       currentkanji: 0
     }
   }
@@ -107,23 +107,16 @@ export default class App extends React.Component {
         <header className="header"><Logo /></header>
         <div className="page">
           <Card
-            id={data[this.state.currentkanji || 0].id}
-            kanji={data[this.state.currentkanji || 0].kanji}
-            kunyomihiragana={data[this.state.currentkanji || 0].kunyomihiragana}
-            kunyomiromaji={data[this.state.currentkanji || 0].kunyomiromaji}
-            onyomihiragana={data[this.state.currentkanji || 0].onyomihiragana}
-            onyomiromaji={data[this.state.currentkanji || 0].onyomiromaji}
-            meaning={data[this.state.currentkanji || 0].meaning}
-            detail={data[this.state.currentkanji || 0].detail}
-            grade={data[this.state.currentkanji || 0].grade}
-            type={data[this.state.currentkanji || 0].type}
+            id={kanjilist[this.state.currentkanji || 0].id}
+            kanji={kanjilist[this.state.currentkanji || 0].kanji}
+            kunyomihiragana={kanjilist[this.state.currentkanji || 0].kunyomi}
+            onyomihiragana={kanjilist[this.state.currentkanji || 0].onyomi}
+            meaning={kanjilist[this.state.currentkanji || 0].english}
+            detail={kanjilist[this.state.currentkanji || 0].example}
+            yomi={kanjilist[this.state.currentkanji || 0].yomi}
             current={this.state.currentkanji}
             total={this.state.kanjicount}
           />
-          <aside className="debugger">
-            <p>This is the current Kanji Number: {this.state.currentkanji}</p>
-            <p>You are accessing {this.state.kanjicount} Kanji</p>
-          </aside>
           <aside className="nav">
             <a onClick={this.handlePrevious} className="button">
               ‹ 前 Previous
