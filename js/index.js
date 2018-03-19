@@ -4,59 +4,8 @@ import ReactDOM from 'react-dom';
 import Card from './Card';
 import * as utils from './utils/random';
 
-import kanjilist from '../data/kanjilist.json';
-const data = [
-	{
-		id             : 0,
-		kanji          : '冬',
-		onyomihiragana : 'とう',
-		onyomiromaji   : 'tō',
-		kunyomihiragana: 'ふゆ',
-		kunyomiromaji  : 'fuyu',
-		meaning        : 'Winter',
-		detail         : 'Grade 2 "Kyōiku" kanji',
-		grade          : 2,
-		type           : 'Kyōiku'
-	},
-	{
-		id             : 1,
-		kanji          : '山',
-		onyomihiragana : 'さん',
-		onyomiromaji   : 'san',
-		kunyomihiragana: 'やま',
-		kunyomiromaji  : 'yama',
-		meaning        : 'Mountain',
-		detail         : 'Grade 1 "Kyōiku" kanji',
-		grade          : 1,
-		type           : 'Kyōiku'
-	},
-	{
-		id             : 2,
-		kanji          : '千',
-		onyomihiragana : 'せん',
-		onyomiromaji   : 'sen',
-		kunyomihiragana: 'ち',
-		kunyomiromaji  : 'chi',
-		meaning        : 'Thousand',
-		detail         : 'Grade 1 "Kyōiku" kanji',
-		grade          : 1,
-		type           : 'Kyōiku'
-	},
-	{
-		id             : 3,
-		kanji          : '家',
-		onyomihiragana : 'か/け',
-		onyomiromaji   : 'ka, ke',
-		kunyomihiragana: 'いえ/や',
-		kunyomiromaji  : 'ie, ya',
-		meaning        : 'House, Home',
-		detail         : 'Grade 2 "Kyōiku" kanji',
-		grade          : 2,
-		type           : 'Kyōiku'
-	}
-];
-
-import '../css/main.scss';
+import kanjilist from './../data/kanjilist.json';
+import './../css/main.scss';
 
 const Logo = () => {
 	return (
