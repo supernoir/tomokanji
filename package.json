@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"postinstall": "webpack",
-		"heroku-postbuild": "webpack -p",
+		"heroku-postbuild": "yarn install && webpack -p",
 		"start": "webpack-dev-server -w",
 		"build": "webpack -p",
 		"test": "jest",
