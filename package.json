@@ -4,6 +4,9 @@
 	"main": "index.js",
 	"author": "supernoir <kawohl@supernoir.io>",
 	"license": "MIT",
+	"engines": {
+		"node": "8.9.1"
+	},
 	"scripts": {
 		"postinstall": "webpack",
 		"heroku-postbuild": "webpack -p",
