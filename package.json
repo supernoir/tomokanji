@@ -11,7 +11,7 @@
 		"postinstall": "webpack",
 		"heroku-postbuild": "yarn install && webpack -p",
 		"start": "webpack-dev-server -w",
-		"build": "webpack -p",
+		"build": "yarn install && webpack -p",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage"
