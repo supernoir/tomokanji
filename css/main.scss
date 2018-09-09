@@ -177,41 +177,27 @@ html {
         font-weight: 300em;
         color: lighten($color-secondary, 20%);
       }
-      .card-classification {
-        display: flex;
-        flex-flow: row;
 
-        .card-classification-grade{
-          background: $color-secondary;
-          color: $color-white;
-          border-top-left-radius: 0.4em;
-          border-bottom-left-radius: 0.4em;
-          margin-right: 0.2em;
-          padding: 0.4em;
-        }
-        .card-classification-type{
-          background: $color-white;
-          color: $color-secondary;
-          border-top-right-radius: 0.4em;
-          border-bottom-right-radius: 0.4em;
-          padding: 0.4em;
-        }
-      }
-      .card-kanjicount{
+      .card-classandcount {
         border-radius: 4px;
         border: 1px solid $color-white;
-        padding: 0.4em;
-        span {
-          &.card-kanjicount-total{
-            color: $color-secondary;
-          }
-          &.card-kanjicount-divider{
-            color: rgba($color-white, 0.2);
-          }
-          &.card-kanjicount-current{
-            color: $color-white;
-          }
-          padding: 0 0.1em;
+        margin-top: 0.8em;
+        padding: 0.2em 0.8em;
+        color: $color-white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .card-classification{
+          margin-left: 0.6em;
+          border-radius: 0.4em;
+          padding: 0.2em 0.4em;
+          background: $color-white;
+          color: $color-primary;
+        }
+        .card-kanjicount{
+
+         
         }
       }
     }

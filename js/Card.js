@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class Card extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			counter: 0,
-			cardData: this.props.data,
-			currentId: 0,
+			counter    : 0,
+			cardData   : this.props.data,
+			currentId  : 0,
 			currentData: this.props.data
 		};
 		this.handleClick.bind(this);
 	}
 
 	handleClick(e) {
-		this.setState({counter: 2});
+		this.setState({ counter: 2 });
 	}
 
 	render() {
@@ -22,7 +22,7 @@ export default class Card extends Component {
 				<div className="card-head">
 					<div className="card-kunyomi">
 						<p className="card-reading-type">訓読み</p>
-						<p className="card-reading-content">{this.props.kunyomihiragana}</p>
+						<p className="card-reading-content">{this.props.kunyomihiragana.length > 0 ?this.props.kunyomihiragana : '訓読みはありませんでした'}</p>
 					</div>
 					<div className="card-onyomi">
 						<p className="card-reading-type">音読み</p>
@@ -37,13 +37,13 @@ export default class Card extends Component {
 				<div className="card-footer">
 					<div className="card-meaning">{this.props.meaning}</div>
 					<div className="card-details">{this.props.detail}</div>
-					<div className="card-classification">
-						<p className="card-classification-type">{this.props.yomi}</p>
-					</div>
-					<div className="card-kanjicount">
-						<span className="card-kanjicount-current">{this.props.current + 1}</span>
-						<span className="card-kanjicount-divider">/</span>
-						<span className="card-kanjicount-total">{this.props.total + 1}</span>
+					<div className="card-classandcount">
+						<p className="card-kanjicount">
+							{`${this.props.current + 1 }/${this.props.total + 1}`}
+						</p>
+						<p className="card-classification">
+							{this.props.yomi}
+						</p>
 					</div>
 				</div>
 			</div>
