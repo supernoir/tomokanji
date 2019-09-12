@@ -1,68 +1,65 @@
-const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './js/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
-  devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        enforce: 'pre', // pre loader (https://github.com/MoOx/eslint-loader)
-        test: /\*.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015']
-        }
-      },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'media/fonts/[name].[ext]'
-        }
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]'
-        }
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.(sass|scss)$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } }
-          ],
-          fallback: 'style-loader'
-        })
-      }
-    ]
-  },
+	entry : './src/index.js',
+	output: {
+		path    : path.resolve(__dirname, 'dist'),
+		filename: 'bundle.js'
+	},
+	devtool: 'source-map',
+	module : {
+		rules: [
+			{
+				enforce: 'pre', // pre loader (https://github.com/MoOx/eslint-loader)
+				test   : /\*.jsx?$/,
+				exclude: /node_modules/,
+				loader : 'eslint-loader'
+			},
+			{
+				test   : /\.js$/,
+				loader : 'babel-loader',
+				exclude: /node_modules/,
+				query  : {
+					presets: ['react', 'es2015']
+				}
+			},
+			{
+				test   : /\.(ttf|eot|woff|woff2)$/,
+				loader : 'file-loader',
+				options: {
+					name: 'media/fonts/[name].[ext]'
+				}
+			},
+			{
+				test   : /\.(png|svg|jpg|gif)$/,
+				loader : 'file-loader',
+				options: {
+					name: '[path][name].[ext]'
+				}
+			},
+			{
+				test  : /\.json$/,
+				loader: 'json-loader'
+			},
+			{
+				test   : /\.(sass|scss)$/,
+				exclude: /node_modules/,
+				use    : ExtractTextPlugin.extract({
+					use     : [{ loader: 'css-loader', options: { sourceMap: true } }, { loader: 'sass-loader', options: { sourceMap: true } }],
+					fallback: 'style-loader'
+				})
+			}
+		]
+	},
 
-  plugins: [
-    new ExtractTextPlugin('style.css'),
-    new HtmlWebpackPlugin({
-      title: '友漢字 - TomoKanji',
-      filename: 'index.html',
-      template: 'index.html'
-    })
-  ]
-}
+	plugins: [
+		new ExtractTextPlugin('style.css'),
+		new HtmlWebpackPlugin({
+			title   : '友漢字 - TomoKanji',
+			filename: 'index.html',
+			template: 'index.html'
+		})
+	]
+};

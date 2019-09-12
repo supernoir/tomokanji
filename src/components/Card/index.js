@@ -22,7 +22,7 @@ export default class Card extends Component {
 				<div className="card-head">
 					<div className="card-kunyomi">
 						<p className="card-reading-type">訓読み</p>
-						<p className="card-reading-content">{this.props.kunyomihiragana.length > 0 ?this.props.kunyomihiragana : '訓読みはありませんでした'}</p>
+						<p className="card-reading-content">{this.props.kunyomihiragana.length > 0 ? this.props.kunyomihiragana : '訓読みはありませんでした'}</p>
 					</div>
 					<div className="card-onyomi">
 						<p className="card-reading-type">音読み</p>
@@ -39,7 +39,7 @@ export default class Card extends Component {
 					<div className="card-details">{this.props.detail}</div>
 					<div className="card-classandcount">
 						<p className="card-kanjicount">
-							{`${this.props.current + 1 }/${this.props.total + 1}`}
+							{`${this.props.current + 1}/${this.props.total + 1}`}
 						</p>
 						<p className="card-classification">
 							{this.props.yomi}

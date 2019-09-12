@@ -1,22 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Card from './Card';
+import Card from './components/Card';
+import Logo from './components/Logo';
 import * as utils from './utils/random';
 
 import kanjilist from './../data/kanjilist.json';
 import './../css/main.scss';
-
-const Logo = () => {
-	return (
-		<div className="brand">
-			<p className="logo">
-				友
-				<span className="highlight">カンジ</span>
-			</p>
-		</div>
-	);
-};
+import Navigation from './components/Navigation';
 
 export default class App extends React.Component {
 	constructor() {
@@ -68,17 +59,7 @@ export default class App extends React.Component {
 						current={this.state.currentkanji}
 						total={this.state.kanjicount}
 					/>
-					<aside className="nav">
-						<a onClick={this.handlePrevious} className="button">
-							‹ 前 Previous
-						</a>
-						<a onClick={this.handleRandom} className="button random">
-							Random 運
-						</a>{' '}
-						<a onClick={this.handleNext} className="button">
-							Next 次 ›
-						</a>
-					</aside>
+					<Navigation handlePrevious={this.handlePrevious} handleNext={this.handleNext} handleRandom={this.handleRandom} />
 				</div>
 			</div>
 		);

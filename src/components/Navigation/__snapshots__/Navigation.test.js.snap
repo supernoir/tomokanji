@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match the snapshot 1`] = `
+<aside
+  class="nav"
+>
+  <a
+    class="button"
+  >
+    ‹ 前 Previous
+  </a>
+  <a
+    class="button random"
+  >
+    Random 運
+  </a>
+  <a
+    class="button"
+  >
+    Next 次 ›
+  </a>
+</aside>
+`;

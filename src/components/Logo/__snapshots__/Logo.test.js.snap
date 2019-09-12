@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should match the snapshot 1`] = `
+<div
+  class="brand"
+>
+  <p
+    class="logo"
+  >
+    友
+    <span
+      class="highlight"
+    >
+      カンジ
+    </span>
+  </p>
+</div>
+`;

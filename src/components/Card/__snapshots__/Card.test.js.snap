@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-head"
+  >
+    <div
+      class="card-kunyomi"
+    >
+      <p
+        class="card-reading-type"
+      >
+        訓読み
+      </p>
+      <p
+        class="card-reading-content"
+      >
+        ひと、 ひと（つ）
+      </p>
+    </div>
+    <div
+      class="card-onyomi"
+    >
+      <p
+        class="card-reading-type"
+      >
+        音読み
+      </p>
+      <p
+        class="card-reading-content"
+      >
+        いち、いつ
+      </p>
+    </div>
+  </div>
+  <div
+    class="card-body"
+  >
+    <div
+      class="card-kanji"
+    >
+      <h1
+        class="card-kanji-content"
+      >
+        一
+      </h1>
+    </div>
+  </div>
+  <div
+    class="card-footer"
+  >
+    <div
+      class="card-meaning"
+    >
+      one
+    </div>
+    <div
+      class="card-details"
+    >
+      一どでいいから、宇宙旅行をしてみたい。
+    </div>
+    <div
+      class="card-classandcount"
+    >
+      <p
+        class="card-kanjicount"
+      >
+        1/201
+      </p>
+      <p
+        class="card-classification"
+      >
+        音
+      </p>
+    </div>
+  </div>
+</div>
+`;
