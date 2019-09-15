@@ -7,6 +7,7 @@ variables:
 stages:
   - test
   - build
+  - deploy
 
 # ----------------------------------
 # TEST
@@ -31,3 +32,17 @@ build app:
   script:
     - npm install
     - npm run build
+
+# ----------------------------------
+# DEPLOY TO STAGING
+# ----------------------------------
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+  when: manual
+  only:
+    - master
