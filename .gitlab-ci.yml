@@ -32,6 +32,8 @@ build app:
   script:
     - npm install
     - npm run build
+  only:
+    - master
 
 # ----------------------------------
 # DEPLOY TO STAGING
@@ -41,6 +43,8 @@ deploy_staging:
   stage: deploy
   script:
     - echo "Deploy to staging server"
+    - npm install
+    - npm run build
   environment:
     name: staging
   when: manual
