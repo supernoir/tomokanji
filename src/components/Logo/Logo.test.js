@@ -1,19 +1,24 @@
 import React from 'react';
-import Logo from './index';
 import { render, shallow } from 'enzyme';
+import { StyledBrand, StyledLogo, StyledHighlight } from './style';
+
+describe('Brand', () => {
+	test('should match the snapshot', () => {
+		const component = render(<StyledBrand />);
+		expect(component).toMatchSnapshot();
+	});
+});
 
 describe('Logo', () => {
 	test('should match the snapshot', () => {
-		const component = render(<Logo />);
+		const component = render(<StyledLogo />);
 		expect(component).toMatchSnapshot();
 	});
+});
 
-	test('should have a className of brand', () => {
-		const component = shallow(<Logo />);
-		expect(component.find('brand')).toBeTruthy();
-	});
-	test('should have a child with className of logo', () => {
-		const component = shallow(<Logo />);
-		expect(component.children().find('logo')).toBeTruthy();
+describe('Highlight', () => {
+	test('should match the snapshot', () => {
+		const component = render(<StyledHighlight />);
+		expect(component).toMatchSnapshot();
 	});
 });

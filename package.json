@@ -9,9 +9,9 @@
 	},
 	"scripts": {
 		"postinstall": "webpack",
-		"heroku-postbuild": "yarn install && webpack -p",
+		"heroku-postbuild": "npm install && webpack -p",
 		"start": "webpack-dev-server -w",
-		"build": "yarn install && webpack -p",
+		"build": "npm install && webpack -p",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
@@ -28,6 +28,8 @@
 		]
 	},
 	"dependencies": {
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0",
 		"babel-cli": "^6.24.1",
 		"babel-core": "^6.25.0",
 		"babel-loader": "^7.1.1",
@@ -43,14 +45,14 @@
 		"node-sass": "^4.7.2",
 		"sass-loader": "^6.0.7",
 		"style-loader": "^0.18.2",
-		"styled-components": "^2.1.2",
+		"styled-components": "^4.3.2",
 		"webpack": "^3.5.4",
 		"webpack-dev-server": "^2.7.1"
 	},
 	"devDependencies": {
+		"babel-plugin-styled-components": "^1.10.6",
 		"enzyme-adapter-react-16": "^1.1.1",
 		"jest": "^22.4.4",
-		"react": "^16.9.0",
-		"react-dom": "^16.9.0"
+		"styled-theming": "^2.2.0"
 	}
 }

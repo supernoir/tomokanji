@@ -1,52 +1,74 @@
 import React, { Component } from 'react';
+import {
+	StyledCard,
+	StyledCardClassification,
+	StyledCardClassAndCount,
+	StyledCardDetails,
+	StyledCardMeaning,
+	StyledCardFooter,
+	StyledCardKanjiContent,
+	StyledCardKanji,
+	StyledCardBody,
+	StyledCardKunyomiReadingContent,
+	StyledCardOnyomiReadingContent,
+	StyledCardKunyomiReadingType,
+	StyledCardOnyomiReadingType,
+	StyledCardOnyomi,
+	StyledCardKunyomi,
+	StyledCardHead
+} from './style';
 
 export default class Card extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			counter    : 0,
 			cardData   : this.props.data,
 			currentId  : 0,
 			currentData: this.props.data
 		};
-		this.handleClick.bind(this);
-	}
-
-	handleClick(e) {
-		this.setState({ counter: 2 });
 	}
 
 	render() {
 		return (
-			<div key={this.props.id} className="card">
-				<div className="card-head">
-					<div className="card-kunyomi">
-						<p className="card-reading-type">訓読み</p>
-						<p className="card-reading-content">{this.props.kunyomihiragana.length > 0 ? this.props.kunyomihiragana : '訓読みはありませんでした'}</p>
-					</div>
-					<div className="card-onyomi">
-						<p className="card-reading-type">音読み</p>
-						<p className="card-reading-content">{this.props.onyomihiragana}</p>
-					</div>
-				</div>
-				<div className="card-body">
-					<div className="card-kanji">
-						<h1 className="card-kanji-content">{this.props.kanji}</h1>
-					</div>
-				</div>
-				<div className="card-footer">
-					<div className="card-meaning">{this.props.meaning}</div>
-					<div className="card-details">{this.props.detail}</div>
-					<div className="card-classandcount">
-						<p className="card-kanjicount">
-							{`${this.props.current + 1}/${this.props.total + 1}`}
-						</p>
-						<p className="card-classification">
+			<StyledCard key={this.props.id}>
+				<StyledCardHead>
+					<StyledCardKunyomi>
+						<StyledCardKunyomiReadingType>
+							訓読み
+						</StyledCardKunyomiReadingType>
+						<StyledCardKunyomiReadingContent>
+							{this.props.kunyomihiragana.length > 0 ? this.props.kunyomihiragana : '訓読みはありませんでした'}
+						</StyledCardKunyomiReadingContent>
+					</StyledCardKunyomi>
+
+					<StyledCardOnyomi>
+						<StyledCardOnyomiReadingType>
+							音読み
+						</StyledCardOnyomiReadingType>
+						<StyledCardOnyomiReadingContent>
+							{this.props.onyomihiragana.length > 0 ? this.props.onyomihiragana : '音読みはありませんでした'}
+						</StyledCardOnyomiReadingContent>
+					</StyledCardOnyomi>
+				</StyledCardHead>
+
+				<StyledCardBody>
+					<StyledCardKanji>
+						<StyledCardKanjiContent>{this.props.kanji}</StyledCardKanjiContent>
+					</StyledCardKanji>
+				</StyledCardBody>
+
+				<StyledCardFooter>
+					<StyledCardMeaning>{this.props.meaning}</StyledCardMeaning>
+					<StyledCardDetails>{this.props.detail}</StyledCardDetails>
+					<StyledCardClassAndCount>
+						{`${this.props.current + 1}/${this.props.total + 1}`}
+						<StyledCardClassification>
 							{this.props.yomi}
-						</p>
-					</div>
-				</div>
-			</div>
+						</StyledCardClassification>
+					</StyledCardClassAndCount>
+				</StyledCardFooter>
+
+			</StyledCard>
 		);
 	}
 }

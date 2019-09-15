@@ -2,76 +2,72 @@
 
 exports[`Card should match the snapshot 1`] = `
 <div
-  class="card"
+  class="style__StyledCard-sc-4k16co-0 fPKoJC"
 >
   <div
-    class="card-head"
+    class="style__StyledCardHead-sc-4k16co-16 bCiBVm"
   >
     <div
-      class="card-kunyomi"
+      class="style__StyledCardKunyomi-sc-4k16co-15 jsmhvW"
     >
       <p
-        class="card-reading-type"
+        class="style__StyledCardKunyomiReadingType-sc-4k16co-13 jVVwJO"
       >
         訓読み
       </p>
       <p
-        class="card-reading-content"
+        class="style__StyledCardKunyomiReadingContent-sc-4k16co-11 gmMYFB"
       >
         ひと、 ひと（つ）
       </p>
     </div>
     <div
-      class="card-onyomi"
+      class="style__StyledCardOnyomi-sc-4k16co-14 lbggBB"
     >
       <p
-        class="card-reading-type"
+        class="style__StyledCardOnyomiReadingType-sc-4k16co-12 jvvFll"
       >
         音読み
       </p>
       <p
-        class="card-reading-content"
+        class="style__StyledCardOnyomiReadingContent-sc-4k16co-10 jJbviv"
       >
         いち、いつ
       </p>
     </div>
   </div>
   <div
-    class="card-body"
+    class="style__StyledCardBody-sc-4k16co-9 gbYRxW"
   >
     <div
-      class="card-kanji"
+      class="style__StyledCardKanji-sc-4k16co-8 iVmLJc"
     >
       <h1
-        class="card-kanji-content"
+        class="style__StyledCardKanjiContent-sc-4k16co-7 gAWYIi"
       >
         一
       </h1>
     </div>
   </div>
   <div
-    class="card-footer"
+    class="style__StyledCardFooter-sc-4k16co-6 eGcKJQ"
   >
     <div
-      class="card-meaning"
+      class="style__StyledCardMeaning-sc-4k16co-5 kSlXTg"
     >
       one
     </div>
     <div
-      class="card-details"
+      class="style__StyledCardDetails-sc-4k16co-4 bVmONy"
     >
       一どでいいから、宇宙旅行をしてみたい。
     </div>
     <div
-      class="card-classandcount"
+      class="style__StyledCardClassAndCount-sc-4k16co-3 TgoHX"
     >
+      1/201
       <p
-        class="card-kanjicount"
-      >
-        1/201
-      </p>
-      <p
-        class="card-classification"
+        class="style__StyledCardClassification-sc-4k16co-1 dEZBws"
       >
         音
       </p>

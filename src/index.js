@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Card from './components/Card';
-import Logo from './components/Logo';
 import * as utils from './utils/random';
 
+// Import Kanji Data
 import kanjilist from './../data/kanjilist.json';
-import './../css/main.scss';
-import Navigation from './components/Navigation';
+
+// Import Styles
+import { ThemeProvider } from 'styled-components';
+import { tomo } from './styles/theme';
+
+// Import Components
+import { StyledApp, GlobalStyle, StyledPage } from './style';
+import { StyledBrand, StyledHeader } from './components/Logo/style';
+import { Navigation } from './components/Navigation';
+import Card from './components/Card/index';
 
 export default class App extends React.Component {
 	constructor() {
@@ -43,25 +50,30 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<div className="app">
-				<header className="header">
-					<Logo />
-				</header>
-				<div className="page">
-					<Card
-						id={kanjilist[this.state.currentkanji || 0].id}
-						kanji={kanjilist[this.state.currentkanji || 0].kanji}
-						kunyomihiragana={kanjilist[this.state.currentkanji || 0].kunyomi}
-						onyomihiragana={kanjilist[this.state.currentkanji || 0].onyomi}
-						meaning={kanjilist[this.state.currentkanji || 0].english}
-						detail={kanjilist[this.state.currentkanji || 0].example}
-						yomi={kanjilist[this.state.currentkanji || 0].yomi}
-						current={this.state.currentkanji}
-						total={this.state.kanjicount}
-					/>
-					<Navigation handlePrevious={this.handlePrevious} handleNext={this.handleNext} handleRandom={this.handleRandom} />
-				</div>
-			</div>
+			<ThemeProvider theme={tomo}>
+				<React.Fragment>
+					<GlobalStyle />
+					<StyledApp>
+						<StyledHeader>
+							<StyledBrand />
+						</StyledHeader>
+						<StyledPage>
+							<Card
+								id={kanjilist[this.state.currentkanji || 0].id}
+								kanji={kanjilist[this.state.currentkanji || 0].kanji}
+								kunyomihiragana={kanjilist[this.state.currentkanji || 0].kunyomi}
+								onyomihiragana={kanjilist[this.state.currentkanji || 0].onyomi}
+								meaning={kanjilist[this.state.currentkanji || 0].english}
+								detail={kanjilist[this.state.currentkanji || 0].example}
+								yomi={kanjilist[this.state.currentkanji || 0].yomi}
+								current={this.state.currentkanji}
+								total={this.state.kanjicount}
+							/>
+							<Navigation handlePrevious={this.handlePrevious} handleNext={this.handleNext} handleRandom={this.handleRandom} />
+						</StyledPage>
+					</StyledApp>
+				</React.Fragment>
+			</ThemeProvider>
 		);
 	}
 }

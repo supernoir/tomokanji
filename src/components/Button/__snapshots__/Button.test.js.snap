@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should match the snapshot 1`] = `
-<a>
+<a
+  class="style__StyledButton-nnkdiu-0 cvcIac"
+>
+  example
+</a>
+`;
+
+exports[`RandomButton should match the snapshot 1`] = `
+<a
+  class="style__StyledRandomButton-nnkdiu-1 egYzDe"
+>
   example
 </a>
 `;
