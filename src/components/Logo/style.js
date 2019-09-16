@@ -7,6 +7,8 @@ export const StyledHeader = styled.header`
   background: ${props => props.theme.black};
   opacity: 0.8;
   height: 3.5em;
+  display: flex;
+  justify-content: center;
 `;
 
 export const StyledBrand = styled(Brand)`
