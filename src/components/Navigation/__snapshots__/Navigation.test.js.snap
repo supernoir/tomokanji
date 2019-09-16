@@ -1,21 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation should match the snapshot 1`] = `
-<aside>
-  <a
-    class="style__StyledButton-nnkdiu-0 cvcIac"
-  >
-    ‹ 前 Previous
-  </a>
-  <a
-    class="style__StyledRandomButton-nnkdiu-1 egYzDe"
-  >
-    Random 運
-  </a>
-  <a
-    class="style__StyledButton-nnkdiu-0 cvcIac"
-  >
-    Next 次 ›
-  </a>
-</aside>
+<aside
+  class="style__StyledNavigation-sc-18o6knt-0 kExgaw"
+/>
 `;
