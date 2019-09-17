@@ -110,7 +110,6 @@ export const StyledCardOnyomi = styled.div`
   padding: 1em;
   margin-left: 0.5em;
   width: 50%;
-  height: 100%;
   border-radius: 0.2em;
   border-top: 6px solid ${props => props.theme.onyomi};
 `;
@@ -121,7 +120,6 @@ export const StyledCardKunyomi = styled.div`
   padding: 1em;
   margin-left: 0.5em;
   width: 50%;
-  height: 100%;
   border-radius: 0.2em;
   border-top: 6px solid ${props => props.theme.kunyomi};
 `;

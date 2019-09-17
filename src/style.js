@@ -17,7 +17,7 @@ html, body {
 export const StyledApp = styled.div`
   color: ${props => props.theme.white};
   text-align: center;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-rows: 1,2;
   grid-template-columns: 1;
