@@ -9,7 +9,7 @@ html, body {
   margin: 0
   padding: 0
   zoom: 1;
-  color: $color-white;
+  color: ${props => props.theme.white};
   text-align: center;
 } 
 `;

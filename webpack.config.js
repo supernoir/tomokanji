@@ -1,6 +1,10 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+const htmlPlugin = new HtmlWebPackPlugin({
+	template: './index.html',
+	filename: './index.html'
+});
 
 module.exports = {
 	entry : './src/index.js',
@@ -9,8 +13,19 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	devtool: 'source-map',
+	plugins: [htmlPlugin],
 	module : {
 		rules: [
+			{
+				test   : /\.tsx?$/,
+				use    : 'ts-loader',
+				exclude: /node_modules/
+			},
+			{
+				enforce: 'pre',
+				test   : /\.js$/,
+				loader : 'source-map-loader'
+			},
 			{
 				enforce: 'pre', // pre loader (https://github.com/MoOx/eslint-loader)
 				test   : /\*.jsx?$/,
@@ -26,40 +41,19 @@ module.exports = {
 				}
 			},
 			{
-				test   : /\.(ttf|eot|woff|woff2)$/,
-				loader : 'file-loader',
-				options: {
-					name: 'media/fonts/[name].[ext]'
-				}
-			},
-			{
 				test   : /\.(png|svg|jpg|gif)$/,
 				loader : 'file-loader',
 				options: {
 					name: '[path][name].[ext]'
 				}
-			},
-			{
-				test  : /\.json$/,
-				loader: 'json-loader'
-			},
-			{
-				test   : /\.(sass|scss)$/,
-				exclude: /node_modules/,
-				use    : ExtractTextPlugin.extract({
-					use     : [{ loader: 'css-loader', options: { sourceMap: true } }, { loader: 'sass-loader', options: { sourceMap: true } }],
-					fallback: 'style-loader'
-				})
 			}
 		]
 	},
-
-	plugins: [
-		new ExtractTextPlugin('style.css'),
-		new HtmlWebpackPlugin({
-			title   : '友漢字 - TomoKanji',
-			filename: 'index.html',
-			template: 'index.html'
-		})
-	]
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js']
+	}
+	/* 	externals: {
+		react      : 'React',
+		'react-dom': 'ReactDOM'
+	} */
 };
