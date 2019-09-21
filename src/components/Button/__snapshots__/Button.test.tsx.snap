@@ -2,7 +2,8 @@
 
 exports[`Button should match the snapshot 1`] = `
 <a
-  class="style__StyledButton-nnkdiu-0 cvcIac"
+  className="sc-bdVaJa hPSpy"
+  onClick={[MockFunction]}
 >
   example
 </a>
@@ -10,7 +11,8 @@ exports[`Button should match the snapshot 1`] = `
 
 exports[`RandomButton should match the snapshot 1`] = `
 <a
-  class="style__StyledRandomButton-nnkdiu-1 egYzDe"
+  className="sc-bwzfXH hufrb"
+  onClick={[MockFunction]}
 >
   example
 </a>

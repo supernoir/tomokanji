@@ -1,15 +1,15 @@
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-html, body {
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+export const GlobalStyle: any = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+body {
   font-family: "Noto Sans", sans-serif;
-  background: ${props => props.theme.primary};
-  margin: 0
-  padding: 0
+  background: rgb(180, 80, 120);
+  margin: 0;
+  padding: 0;
   zoom: 1;
-  color: ${props => props.theme.white};
+  color: white;
+  color: white;
   text-align: center;
 } 
 `;
@@ -31,5 +31,3 @@ export const StyledPage = styled.main`
   text-align: center;
   border-radius: .4em;
 `;
-
-createGlobalStyle`${GlobalStyle}`;

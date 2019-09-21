@@ -1,18 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Brand should match the snapshot 1`] = `
-<div
-  class="style__StyledBrand-hav549-1 kznDAl"
->
-  <p
-    class="style__StyledLogo-hav549-2 eXuYOZ"
-  >
+<div>
+  <p>
     <span>
       友
     </span>
-    <span
-      class="style__StyledHighlight-hav549-3 hKVPpb"
-    >
+    <span>
       カンジ
     </span>
   </p>
@@ -20,23 +14,17 @@ exports[`Brand should match the snapshot 1`] = `
 `;
 
 exports[`Highlight should match the snapshot 1`] = `
-<span
-  class="style__StyledHighlight-hav549-3 hKVPpb"
->
+<span>
   カンジ
 </span>
 `;
 
 exports[`Logo should match the snapshot 1`] = `
-<p
-  class="style__StyledLogo-hav549-2 eXuYOZ"
->
+<p>
   <span>
     友
   </span>
-  <span
-    class="style__StyledHighlight-hav549-3 hKVPpb"
-  >
+  <span>
     カンジ
   </span>
 </p>

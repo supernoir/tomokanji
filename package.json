@@ -1,11 +1,9 @@
 {
 	"name": "tomokanji",
 	"version": "0.0.1",
-	"main": "index.js",
 	"author": "supernoir <kawohl@supernoir.io>",
 	"license": "MIT",
 	"scripts": {
-		"postinstall": "webpack",
 		"heroku-postbuild": "npm install && webpack -p",
 		"start": "webpack-dev-server -w",
 		"build": "npm install && webpack -p",
@@ -14,44 +12,36 @@
 		"test:coverage": "jest --coverage",
 		"test:ci": "jest --ci --updateSnapshot"
 	},
-	"jest": {
-		"verbose": true,
-		"testURL": "http://localhost",
-		"setupFiles": [
-			"./src/test/jestsetup.js"
-		],
-		"snapshotSerializers": [
-			"enzyme-to-json/serializer"
-		]
-	},
 	"dependencies": {
+		"@types/react-test-renderer": "^16.9.0",
+		"@types/styled-theming": "^2.2.2",
 		"awesome-typescript-loader": "^5.2.1",
 		"babel-cli": "^6.24.1",
 		"babel-core": "^6.25.0",
 		"babel-loader": "^7.1.1",
 		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-react": "^6.24.1",
-		"enzyme": "^3.3.0",
-		"enzyme-to-json": "^3.3.1",
 		"eslint-config-standard": "^10.2.1",
 		"extract-text-webpack-plugin": "^3.0.0",
 		"file-loader": "^0.11.2",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
+		"react-test-renderer": "^16.9.0",
 		"styled-components": "^4.3.2",
+		"ts-jest": "^24.1.0",
 		"ts-loader": "^6.1.0",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.3",
 		"webpack": "^4.40.2",
 		"webpack-cli": "^3.3.9",
-		"webpack-dev-server": "^3.8.1",
-		"webpack-validator": "^3.0.1"
+		"webpack-dev-server": "^3.8.1"
 	},
 	"devDependencies": {
+		"@types/jest": "^24.0.18",
 		"@types/react": "^16.9.2",
 		"@types/react-dom": "^16.9.0",
+		"@types/styled-components": "^4.1.19",
 		"babel-plugin-styled-components": "^1.10.6",
-		"enzyme-adapter-react-16": "^1.1.1",
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "^22.4.4",
 		"source-map-loader": "^0.2.4",

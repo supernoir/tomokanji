@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactText } from 'react';
 import {
 	StyledCard,
 	StyledCardClassification,
@@ -18,13 +18,24 @@ import {
 	StyledCardHead
 } from './style';
 
-export default class Card extends Component {
-	constructor(props) {
+interface CardProps {
+	id: number;
+	kunyomi?: string;
+	onyomi?: string;
+	kanji: string;
+	english: string;
+	example: string;
+	yomi: string | ReactText;
+	current: number;
+	total: number;
+
+}
+
+export default class Card extends Component<CardProps, {}> {
+	constructor(props: CardProps) {
 		super(props);
 		this.state = {
-			cardData   : this.props.data,
-			currentId  : 0,
-			currentData: this.props.data
+			currentId: 0,
 		};
 	}
 
@@ -37,7 +48,7 @@ export default class Card extends Component {
 							訓読み
 						</StyledCardKunyomiReadingType>
 						<StyledCardKunyomiReadingContent>
-							{this.props.kunyomihiragana.length > 0 ? this.props.kunyomihiragana : '訓読みはありませんでした'}
+							{this.props.kunyomi ? this.props.kunyomi : '訓読みはありませんでした'}
 						</StyledCardKunyomiReadingContent>
 					</StyledCardKunyomi>
 
@@ -46,7 +57,7 @@ export default class Card extends Component {
 							音読み
 						</StyledCardOnyomiReadingType>
 						<StyledCardOnyomiReadingContent>
-							{this.props.onyomihiragana.length > 0 ? this.props.onyomihiragana : '音読みはありませんでした'}
+							{this.props.onyomi ? this.props.onyomi : '音読みはありませんでした'}
 						</StyledCardOnyomiReadingContent>
 					</StyledCardOnyomi>
 				</StyledCardHead>
@@ -58,8 +69,8 @@ export default class Card extends Component {
 				</StyledCardBody>
 
 				<StyledCardFooter>
-					<StyledCardMeaning>{this.props.meaning}</StyledCardMeaning>
-					<StyledCardDetails>{this.props.detail}</StyledCardDetails>
+					<StyledCardMeaning>{this.props.english}</StyledCardMeaning>
+					<StyledCardDetails>{this.props.example}</StyledCardDetails>
 					<StyledCardClassAndCount>
 						{`${this.props.current + 1}/${this.props.total + 1}`}
 						<StyledCardClassification>

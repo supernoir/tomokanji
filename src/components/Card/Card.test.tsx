@@ -1,40 +1,40 @@
 import React from 'react';
 import Card from './index';
-import { render, shallow } from 'enzyme';
+import Renderer from 'react-test-renderer'
 
 const mockData = [
 	{
-		id     : 0,
-		kanji  : '一',
-		onyomi : 'いち、いつ',
+		id: 0,
+		kanji: '一',
+		onyomi: 'いち、いつ',
 		kunyomi: 'ひと、 ひと（つ）',
 		english: 'one',
-		yomi   : '音',
+		yomi: '音',
 		example: '一どでいいから、宇宙旅行をしてみたい。'
 	},
 	{
-		id     : 1,
-		kanji  : '二',
-		onyomi : 'に',
+		id: 1,
+		kanji: '二',
+		onyomi: 'に',
 		kunyomi: 'ふた、ふた（つ）',
 		english: 'two',
-		yomi   : '音',
+		yomi: '音',
 		example: '勉強を二のつぎにしてあそびに行く。'
 	}
 ];
 
 describe('Card', () => {
 	test('should match the snapshot', () => {
-		const component = render(
+		const component = Renderer.create(
 			<Card
 				id={mockData[0].id}
 				kanji={mockData[0].kanji}
-				kunyomihiragana={mockData[0].kunyomi}
-				onyomihiragana={mockData[0].onyomi}
-				meaning={mockData[0].english}
-				detail={mockData[0].example}
+				kunyomi={mockData[0].kunyomi}
+				onyomi={mockData[0].onyomi}
+				english={mockData[0].english}
+				example={mockData[0].example}
 				yomi={mockData[0].yomi}
-				current={0}
+				current={1}
 				total={200}
 			/>
 		);

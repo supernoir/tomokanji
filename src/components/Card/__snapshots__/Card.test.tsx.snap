@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+<div
+  className="sc-bdVaJa gFIyPa"
+>
+  <div
+    className="sc-jzJRlG bXsGVE"
+  >
+    <div
+      className="sc-fjdhpX gwonBs"
+    >
+      <p
+        className="sc-VigVT dakiqV"
+      >
+        訓読み
+      </p>
+      <p
+        className="sc-gZMcBi dhGGRZ"
+      >
+        ひと、 ひと（つ）
+      </p>
+    </div>
+    <div
+      className="sc-jTzLTM bTMtpE"
+    >
+      <p
+        className="sc-gqjmRU dfnrGQ"
+      >
+        音読み
+      </p>
+      <p
+        className="sc-iwsKbI bdyKZ"
+      >
+        いち、いつ
+      </p>
+    </div>
+  </div>
+  <div
+    className="sc-dnqmqq etplQW"
+  >
+    <div
+      className="sc-htoDjs gEHvYl"
+    >
+      <h1
+        className="sc-gzVnrw iozBrE"
+      >
+        一
+      </h1>
+    </div>
+  </div>
+  <div
+    className="sc-bZQynM eerjQp"
+  >
+    <div
+      className="sc-EHOje eOWCyW"
+    >
+      one
+    </div>
+    <div
+      className="sc-ifAKCX bYrwdv"
+    >
+      一どでいいから、宇宙旅行をしてみたい。
+    </div>
+    <div
+      className="sc-bxivhb grvtRF"
+    >
+      2/201
+      <p
+        className="sc-bwzfXH cGawet"
+      >
+        音
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,14 @@ import React from 'react';
 import { StyledButton, StyledRandomButton } from '../Button/style';
 import { StyledNavigation } from './style';
 
-export const Navigation = props => {
+interface NavigationProps {
+	handlePrevious: () => void;
+	handleRandom: () => void;
+	handleNext: () => void;
+	children?: JSX.Element;
+}
+
+const Navigation: React.FC<NavigationProps> = (props) => {
 	return (
 		<StyledNavigation>
 			<StyledButton label={'‹ 前 Previous'} handleClick={props.handlePrevious} />
@@ -11,3 +18,5 @@ export const Navigation = props => {
 		</StyledNavigation>
 	);
 };
+
+export default Navigation

@@ -2,6 +2,6 @@
 
 exports[`Navigation should match the snapshot 1`] = `
 <aside
-  class="style__StyledNavigation-sc-18o6knt-0 kExgaw"
+  className="sc-bdVaJa kGmgWq"
 />
 `;

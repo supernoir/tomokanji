@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from './index';
+import Button from './index';
 
 export const StyledButton = styled(Button)`
   background: ${props => props.theme.white};
