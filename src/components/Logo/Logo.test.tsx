@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledBrand, StyledLogo, StyledHighlight } from './style';
+import { StyledBrand } from './style';
 import Renderer from 'react-test-renderer'
 
 describe('Brand', () => {
@@ -8,7 +8,7 @@ describe('Brand', () => {
 		expect(component).toMatchSnapshot();
 	});
 });
-
+/*
 describe('Logo', () => {
 	test('should match the snapshot', () => {
 		const component = Renderer.create(<StyledLogo />);
@@ -22,3 +22,4 @@ describe('Highlight', () => {
 		expect(component).toMatchSnapshot();
 	});
 });
+ */

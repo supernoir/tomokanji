@@ -1,22 +1,17 @@
 import React from 'react';
-import { StyledHighlight, StyledLogo } from './style';
+import { StyledHeader, StyledBrand, StyledLogo } from './style';
+import TomoSVG from './tomo';
 
-export const Brand = () => {
-	return (
-		<div>
-			<StyledLogo />
-		</div>
-	);
-};
-
-export const Logo = () => {
-	return (
-		<p>
-			<span>友</span><StyledHighlight />
-		</p>
-	);
-};
-
-export const Highlight = () => {
-	return <span>カンジ</span>;
-};
+export const Header = () => {
+	return (<StyledHeader>
+		<StyledBrand>
+			トモ
+		</StyledBrand>
+		<StyledLogo>
+			<TomoSVG />
+		</StyledLogo>
+		<StyledBrand>
+			カンジ
+		</StyledBrand>
+	</StyledHeader>)
+}

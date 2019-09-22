@@ -18,7 +18,9 @@ exports[`Card should match the snapshot 1`] = `
       <p
         className="sc-gZMcBi dhGGRZ"
       >
-        ひと、 ひと（つ）
+        <p>
+          ひと、 ひと（つ）
+        </p>
       </p>
     </div>
     <div
@@ -32,7 +34,9 @@ exports[`Card should match the snapshot 1`] = `
       <p
         className="sc-iwsKbI bdyKZ"
       >
-        いち、いつ
+        <p>
+          いち、いつ
+        </p>
       </p>
     </div>
   </div>

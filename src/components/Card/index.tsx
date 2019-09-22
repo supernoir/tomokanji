@@ -1,4 +1,4 @@
-import React, { Component, ReactText } from 'react';
+import React, { Component, ReactText, ReactChild } from 'react';
 import {
 	StyledCard,
 	StyledCardClassification,
@@ -18,6 +18,10 @@ import {
 	StyledCardHead
 } from './style';
 
+interface YomiMissingProps {
+	yomi: string;
+}
+
 interface CardProps {
 	id: number;
 	kunyomi?: string;
@@ -30,6 +34,8 @@ interface CardProps {
 	total: number;
 
 }
+
+const YomiMissing: React.FC<YomiMissingProps> = ({ yomi }) => <div>{`(シ_ _)シ ${yomi}はありませんでした`}</div>
 
 export default class Card extends Component<CardProps, {}> {
 	constructor(props: CardProps) {
@@ -48,7 +54,7 @@ export default class Card extends Component<CardProps, {}> {
 							訓読み
 						</StyledCardKunyomiReadingType>
 						<StyledCardKunyomiReadingContent>
-							{this.props.kunyomi ? this.props.kunyomi : '訓読みはありませんでした'}
+							{this.props.kunyomi ? <p>{this.props.kunyomi}</p> : <YomiMissing yomi={'訓読み'} />}
 						</StyledCardKunyomiReadingContent>
 					</StyledCardKunyomi>
 
@@ -57,7 +63,7 @@ export default class Card extends Component<CardProps, {}> {
 							音読み
 						</StyledCardOnyomiReadingType>
 						<StyledCardOnyomiReadingContent>
-							{this.props.onyomi ? this.props.onyomi : '音読みはありませんでした'}
+							{this.props.onyomi ? <p>{this.props.onyomi}</p> : <YomiMissing yomi={'音読み'} />}
 						</StyledCardOnyomiReadingContent>
 					</StyledCardOnyomi>
 				</StyledCardHead>

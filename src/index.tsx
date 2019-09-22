@@ -5,9 +5,9 @@ import kanjilist from './../data/kanjilist.json'
 import Navigation from './components/Navigation';
 import { getRandom } from './utils/random'
 import { StyledPage, StyledApp, GlobalStyle } from './style'
-import { StyledHeader, StyledBrand } from './components/Logo/style';
 import { ThemeProvider } from 'styled-components';
 import { tomo } from './styles/theme';
+import { Header } from './components/Logo/index'
 
 interface AppState {
 	kanjiset: {
@@ -64,9 +64,7 @@ export default class App extends React.Component<{}, AppState> {
 				<GlobalStyle />
 				<ThemeProvider theme={tomo}>
 					<StyledApp>
-						<StyledHeader>
-							<StyledBrand />
-						</StyledHeader>
+						<Header />
 						<StyledPage>
 							<Card
 								id={kanjilist[this.state.currentKanji || 0].id}
@@ -87,7 +85,7 @@ export default class App extends React.Component<{}, AppState> {
 						</StyledPage>
 					</StyledApp>
 				</ThemeProvider>
-			</React.Fragment>
+			</React.Fragment >
 		);
 	}
 }
