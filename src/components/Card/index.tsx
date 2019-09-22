@@ -37,55 +37,59 @@ interface CardProps {
 
 const YomiMissing: React.FC<YomiMissingProps> = ({ yomi }) => <div>{`(シ_ _)シ ${yomi}はありませんでした`}</div>
 
-export default class Card extends Component<CardProps, {}> {
-	constructor(props: CardProps) {
-		super(props);
-		this.state = {
-			currentId: 0,
-		};
-	}
-
-	render() {
-		return (
-			<StyledCard key={this.props.id}>
-				<StyledCardHead>
-					<StyledCardKunyomi>
-						<StyledCardKunyomiReadingType>
-							訓読み
+const Card: React.FC<CardProps> = ({
+	id,
+	kunyomi,
+	onyomi,
+	kanji,
+	english,
+	example,
+	current,
+	total,
+	yomi
+}) => {
+	return (
+		<StyledCard key={`${kanji}-${id}`}>
+			<StyledCardHead>
+				<StyledCardKunyomi>
+					<StyledCardKunyomiReadingType>
+						訓読み
 						</StyledCardKunyomiReadingType>
-						<StyledCardKunyomiReadingContent>
-							{this.props.kunyomi ? <p>{this.props.kunyomi}</p> : <YomiMissing yomi={'訓読み'} />}
-						</StyledCardKunyomiReadingContent>
-					</StyledCardKunyomi>
+					<StyledCardKunyomiReadingContent>
+						{kunyomi ? <p>{kunyomi}</p> : <YomiMissing yomi={'訓読み'} />}
+					</StyledCardKunyomiReadingContent>
+				</StyledCardKunyomi>
 
-					<StyledCardOnyomi>
-						<StyledCardOnyomiReadingType>
-							音読み
+				<StyledCardOnyomi>
+					<StyledCardOnyomiReadingType>
+						音読み
 						</StyledCardOnyomiReadingType>
-						<StyledCardOnyomiReadingContent>
-							{this.props.onyomi ? <p>{this.props.onyomi}</p> : <YomiMissing yomi={'音読み'} />}
-						</StyledCardOnyomiReadingContent>
-					</StyledCardOnyomi>
-				</StyledCardHead>
+					<StyledCardOnyomiReadingContent>
+						{onyomi ? <p>{onyomi}</p> : <YomiMissing yomi={'音読み'} />}
+					</StyledCardOnyomiReadingContent>
+				</StyledCardOnyomi>
+			</StyledCardHead>
 
-				<StyledCardBody>
-					<StyledCardKanji>
-						<StyledCardKanjiContent>{this.props.kanji}</StyledCardKanjiContent>
-					</StyledCardKanji>
-				</StyledCardBody>
+			<StyledCardBody>
+				<StyledCardKanji>
+					<StyledCardKanjiContent>{kanji}</StyledCardKanjiContent>
+				</StyledCardKanji>
+			</StyledCardBody>
 
-				<StyledCardFooter>
-					<StyledCardMeaning>{this.props.english}</StyledCardMeaning>
-					<StyledCardDetails>{this.props.example}</StyledCardDetails>
-					<StyledCardClassAndCount>
-						{`${this.props.current + 1}/${this.props.total + 1}`}
-						<StyledCardClassification>
-							{this.props.yomi}
-						</StyledCardClassification>
-					</StyledCardClassAndCount>
-				</StyledCardFooter>
+			<StyledCardFooter>
+				<StyledCardMeaning>{english}</StyledCardMeaning>
+				<StyledCardDetails>{example}</StyledCardDetails>
+				<StyledCardClassAndCount>
+					{`${current + 1}/${total + 1}`}
+					<StyledCardClassification>
+						{yomi}
+					</StyledCardClassification>
+				</StyledCardClassAndCount>
+			</StyledCardFooter>
 
-			</StyledCard>
-		);
-	}
+		</StyledCard>
+	);
+
 }
+
+export default Card

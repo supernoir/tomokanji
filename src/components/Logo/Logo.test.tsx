@@ -8,18 +8,3 @@ describe('Brand', () => {
 		expect(component).toMatchSnapshot();
 	});
 });
-/*
-describe('Logo', () => {
-	test('should match the snapshot', () => {
-		const component = Renderer.create(<StyledLogo />);
-		expect(component).toMatchSnapshot();
-	});
-});
-
-describe('Highlight', () => {
-	test('should match the snapshot', () => {
-		const component = Renderer.create(<StyledHighlight />);
-		expect(component).toMatchSnapshot();
-	});
-});
- */

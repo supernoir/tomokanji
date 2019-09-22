@@ -1,4 +1,4 @@
-import React, { ReactText } from 'react';
+import React, { ReactText, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Card from './components/Card';
 import kanjilist from './../data/kanjilist.json'
@@ -9,85 +9,62 @@ import { ThemeProvider } from 'styled-components';
 import { tomo } from './styles/theme';
 import { Header } from './components/Logo/index'
 
-interface AppState {
-	kanjiset: {
-		id: number;
-		kanji: string;
-		onyomi?: string;
-		kunyomi?: string;
-		english: string;
-		example: string;
-		yomi: string | ReactText;
-	}[];
-	kanjiCount: number;
-	currentKanji: number;
-}
+const App: React.FC = () => {
+	const kanjiCount = kanjilist.length - 1
+	const [currentKanji, setCurrentKanji] = useState(0)
 
-interface AppProps { }
-
-export default class App extends React.Component<{}, AppState> {
-
-	constructor(props: AppProps) {
-		super(props)
-		this.state = {
-			kanjiset: kanjilist,
-			kanjiCount: kanjilist.length - 1,
-			currentKanji: 0
-		}
-	}
-
-	handlePrevious = () => {
-		let current = this.state.currentKanji;
+	const handlePrevious = () => {
+		let current = currentKanji;
 		if (current < 0) {
-			this.setState({ currentKanji: current - 1 });
+			setCurrentKanji(current - 1);
 		} else {
-			this.setState({ currentKanji: 0 });
+			setCurrentKanji(0);
 		}
 	}
 
-	handleRandom = () => {
-		this.setState({ currentKanji: getRandom(0, this.state.kanjiCount) });
+	const handleRandom = () => {
+		setCurrentKanji(getRandom(0, kanjiCount))
 	}
 
-	handleNext = () => {
-		let current = this.state.currentKanji;
-		if (current < this.state.kanjiCount) {
-			this.setState({ currentKanji: current + 1 });
+	const handleNext = () => {
+		let current = currentKanji;
+		if (current < kanjiCount) {
+			setCurrentKanji(current + 1)
 		} else {
-			this.setState({ currentKanji: this.state.kanjiCount });
+			setCurrentKanji(kanjiCount)
 		}
 	}
 
-	render() {
-		return (
-			<React.Fragment>
-				<GlobalStyle />
-				<ThemeProvider theme={tomo}>
-					<StyledApp>
-						<Header />
-						<StyledPage>
-							<Card
-								id={kanjilist[this.state.currentKanji || 0].id}
-								kanji={kanjilist[this.state.currentKanji || 0].kanji}
-								kunyomi={kanjilist[this.state.currentKanji || 0].kunyomi}
-								onyomi={kanjilist[this.state.currentKanji || 0].onyomi}
-								english={kanjilist[this.state.currentKanji || 0].english}
-								example={kanjilist[this.state.currentKanji || 0].example}
-								yomi={kanjilist[this.state.currentKanji || 0].yomi}
-								current={this.state.currentKanji}
-								total={this.state.kanjiCount}
-							/>
-							<Navigation
-								handlePrevious={this.handlePrevious}
-								handleRandom={this.handleRandom}
-								handleNext={this.handleNext}
-							/>
-						</StyledPage>
-					</StyledApp>
-				</ThemeProvider>
-			</React.Fragment >
-		);
-	}
+	return (
+		<React.Fragment>
+			<GlobalStyle />
+			<ThemeProvider theme={tomo}>
+				<StyledApp>
+					<Header />
+					<StyledPage>
+						<Card
+							id={kanjilist[currentKanji || 0].id}
+							kanji={kanjilist[currentKanji || 0].kanji}
+							kunyomi={kanjilist[currentKanji || 0].kunyomi}
+							onyomi={kanjilist[currentKanji || 0].onyomi}
+							english={kanjilist[currentKanji || 0].english}
+							example={kanjilist[currentKanji || 0].example}
+							yomi={kanjilist[currentKanji || 0].yomi}
+							current={currentKanji}
+							total={kanjiCount}
+						/>
+						<Navigation
+							handlePrevious={handlePrevious}
+							handleRandom={handleRandom}
+							handleNext={handleNext}
+						/>
+					</StyledPage>
+				</StyledApp>
+			</ThemeProvider>
+		</React.Fragment >
+	);
+
 }
+export default App
 
 ReactDOM.render(<App />, document.getElementById('app'));
